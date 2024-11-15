@@ -14,6 +14,8 @@
 
 - I didn't add any logging, but to clarify I would log when we gracefully "fail" in any places so that stuff is easier to track later on. This also comes down to how in practice it's common to use tools that log most failures for you, so I'd only then log the things that are important and not likely to throw, or be part of, an exception.
 
+- There is some issue with Swagger and it isn't displaying the docs properly. I'm unsure if this is intended but I assumed not and didn't invest time into fixing it. I just added comments regardless.
+
 ## With more time I:
 
 - Would update the endpoint to response with an IActionResult and handle some other response codes such as 404, however in this case I've opted to either respond with all products or no products, and to use GBP is the provided currency is invalid.

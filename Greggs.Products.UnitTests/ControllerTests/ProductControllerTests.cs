@@ -1,11 +1,8 @@
 using System;
-using System.Linq;
-using AutoFixture;
 using FakeItEasy;
 using FluentAssertions;
 using Greggs.Products.Api.Controllers;
 using Greggs.Products.Api.Models;
-using Greggs.Products.Api.Services;
 using Greggs.Products.Api.Services.Interfaces;
 using NUnit.Framework;
 

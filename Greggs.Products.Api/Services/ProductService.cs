@@ -42,6 +42,8 @@ public class ProductService : IProductService
             : products.Select(product => ConvertCurrency(product, currency));
     }
 
+    // This is a private static method now, but I'd make this a global helper which just focuses on the price conversion
+    // Since this is going to be a private method which does the cast anyway, I just left it all here.
     private static Product ConvertCurrency(Product product, Currency currency)
     {
         // Round UP to the nearest 2 decimal places every time
