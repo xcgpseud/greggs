@@ -1,3 +1,31 @@
+# My Readme (Chris)
+
+## Notes:
+
+- I've left some comments in the code for the sake of this test. Usually my view on comments is that they should only be used to explain "why" something has been done in a certain way, and that my code should be readable enough that comments are not required to describe it further. If my code is not readable enough, I'll aim to fix that and make it more readable rather than add comments to it.
+
+- I created a fake Currency DB in the same vein as the current Product one, in order to consider some scalability; we can add more currencies easily by updating the DB and adding a Constant to match.
+
+- I have created a "ProductService" which kind of acts like a repository (which I guess is also a service anyway) - this uses both different DataAccess classes to achieve the response we required. I felt that the controller has no reason to know about 2 different data access layers, so I moved that logic into a service of its own and didn't call it a "Repository" because I'd personally call my "DataAccess" classes repositories and make those more broad, and then use Services as more of a "controller -> data access layer" translation thingy (which some might just call a Handler)! This is just preference and not really a "rule" so I figured I'd clear it up here.
+
+- I replaced XUnit with NUnit just for some familiarity, for now - I can happily learn XUnit but it felt more efficient to do this for now.
+
+- I have created unit tests with different names to prove both user stories but haven't done anything to explicitly link them. Ideally, I'd have integration tests for user stories and use gherkin or something similar for the syntax.
+
+- I didn't add any logging, but to clarify I would log when we gracefully "fail" in any places so that stuff is easier to track later on. This also comes down to how in practice it's common to use tools that log most failures for you, so I'd only then log the things that are important and not likely to throw, or be part of, an exception.
+
+## With more time I:
+
+- Would update the endpoint to response with an IActionResult and handle some other response codes such as 404, however in this case I've opted to either respond with all products or no products, and to use GBP is the provided currency is invalid.
+
+- Would add proper logging around all of the different types of response etc. but I left this out in the interest of not going over the top with everything.
+
+- Would add integration tests to test end-to-end including an in-memory database. Without an actual DB implementation this was unnecessary though.
+
+---
+
+# Original Readme:
+
 # Greggs.Products
 ## Introduction
 Hello and welcome to the Greggs Products repository, thanks for finding it!
